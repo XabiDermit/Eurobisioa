@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.UI5Kud">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.UI5Kud">
    <children>
       <TableView fx:id="taula" layoutX="106.0" layoutY="77.0" prefHeight="247.0" prefWidth="389.0">
         <columns>
-          <TableColumn prefWidth="195.0" text="IZENA" />
-          <TableColumn minWidth="0.0" prefWidth="193.0" text="PUNTUAK" />
+          <TableColumn fx:id="herrialdea" prefWidth="195.0" text="IZENA" />
+          <TableColumn fx:id="puntuak" minWidth="0.0" prefWidth="193.0" text="PUNTUAK" />
         </columns>
       </TableView>
       <Label fx:id="lblMezua" layoutX="278.0" layoutY="41.0" prefHeight="16.0" prefWidth="45.0" text="TOP 3:" />

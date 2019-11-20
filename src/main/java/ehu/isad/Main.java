@@ -110,4 +110,13 @@ public class Main extends Application {
     stage.show();
     UI4Kud.taulaBete();
   }
+
+  public void top3Erakutsi(){
+    if(UI5Scene== null){
+      UI5Scene = new Scene(UI5);
+    }
+    stage.setScene(UI5Scene);
+    stage.show();
+    UI5Kud.taulaBete();
+  }
 }

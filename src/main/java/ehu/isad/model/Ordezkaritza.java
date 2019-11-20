@@ -13,6 +13,10 @@ public class Ordezkaritza {
         this.abestia= pAbestia;
         this.puntuak= pPuntuak;
     }
+    public Ordezkaritza(String pHerrialdea, int pPuntuak){
+        this.herrialdea = pHerrialdea;
+        this.puntuak = pPuntuak;
+    }
 
     public String getHerrialdea() {
         return herrialdea;

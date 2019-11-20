@@ -58,8 +58,9 @@ public class UI4Kud implements Initializable {
 
     }
     @FXML
-    public void onClick(ActionEvent actionEvent) throws SQLException {
+    public void onClickTop3(ActionEvent actionEvent) throws SQLException {
 
+        mainApp.top3Erakutsi();
 
     }
 

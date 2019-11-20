@@ -41,4 +41,30 @@ public class OrdezkaritzaDbKud {
         return ordezkaritzak;
     }
 
+    public ArrayList<Ordezkaritza> top3Lortu(){
+        ArrayList<Ordezkaritza> ordezkaritzak = new ArrayList<>();
+        try{
+            String statement = "select herrialdea, puntuak from Ordezkaritza where urtea= strftime('%Y', 'now') order by puntuak desc limit 3";
+            ResultSet rs = DBKudeatzaile.getInstantzia().execSQL(statement);
+            String herrialdea;
+            String artista;
+            String abestia;
+            int puntuak;
+            while(rs.next()){
+                herrialdea= rs.getString("herrialdea");
+
+                puntuak = rs.getInt("puntuak");
+                Ordezkaritza ordezkaritza = new Ordezkaritza(herrialdea,puntuak);
+                ordezkaritzak.add(ordezkaritza);
+            }
+        } catch (SQLException ex) {
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+        }
+        return ordezkaritzak;
+
+    }
+
 }
