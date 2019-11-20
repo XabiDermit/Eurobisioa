@@ -45,4 +45,6 @@ public class HerrialdeakDBKud {
     return emaitza;
   }
 
+
+
 }

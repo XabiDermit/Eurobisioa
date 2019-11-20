@@ -18,4 +18,7 @@ public class Herrialdea {
 
   }
 
+  public String getIzena() {
+    return izena;
+  }
 }
