@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ehu.isad.controller.ui.UI2Kud">
+   <children>
+      <ComboBox fx:id="cbHerrialdeak" layoutX="225.0" layoutY="187.0" prefWidth="150.0" />
+      <Button layoutX="282.0" layoutY="231.0" mnemonicParsing="false" text="OK" />
+      <Label layoutX="151.0" layoutY="154.0" text="Aukeratu zein herrialde bozkatu nahi duen" />
+   </children>
+</AnchorPane>

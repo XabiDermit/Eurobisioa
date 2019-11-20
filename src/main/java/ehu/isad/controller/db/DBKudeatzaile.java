@@ -15,8 +15,8 @@ public class DBKudeatzaile {
 	private void conOpen() {
 		try {
 
-			String path=this.getClass().getResource("/ezarpenak.sqlite").getPath();
-			String url = "jdbc:sqlite:"+ path;
+			//String path=this.getClass().getResource("/eurobisioa.sqlite").getPath();
+			String url = "jdbc:sqlite::resource:eurobisioa.db";
 			Class.forName("org.sqlite.JDBC").getConstructor().newInstance();
 
 			conn = (Connection) DriverManager.getConnection(url);
@@ -69,7 +69,7 @@ public class DBKudeatzaile {
 
 	public ResultSet execSQL(String query) {
 		int count = 0;
-		Statement s = null;
+		Statement s;
 		ResultSet rs = null;
 
 		try {

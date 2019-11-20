@@ -1,47 +1,42 @@
 package ehu.isad.controller.ui;
 
 import ehu.isad.Main;
-import ehu.isad.controller.db.EzarpenakDBKud;
-import ehu.isad.model.Ezarpena;
+import ehu.isad.controller.db.HerrialdeakDBKud;
+import ehu.isad.controller.db.HerrialdeakDBKud;
+import ehu.isad.model.Herrialdea;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class EzarpenakKud implements Initializable {
+public class UI2Kud implements Initializable {
 
   // Reference to the main application.
   private Main mainApp;
 
+
   @FXML
-  private TextArea ezarpenak;
+  private ComboBox cbHerrialdeak;
 
   public void setMainApp(Main main) {
-    this.mainApp = mainApp;
+    this.mainApp = main;
   }
 
 
-  public void getEzarpenak(){
-   // datubasetik atzitu ezarpenak
-    List<Ezarpena> zerrenda = EzarpenakDBKud.getInstantzia().lortuEzarpenak();
-
-    ezarpenak.setText(zerrenda.toString());
-  }
-
-  @FXML
-  public void onClick(ActionEvent actionEvent) {
-
-  }
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
 
   }
 
+  public void partaideakErakutsi() {
+    List<Herrialdea> herrialdeak = HerrialdeakDBKud.getInstantzia().lortuHerrialdeak();
+    cbHerrialdeak.getItems().addAll(herrialdeak);
+    cbHerrialdeak.getSelectionModel().selectFirst();
+  }
 }

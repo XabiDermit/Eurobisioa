@@ -1,7 +1,7 @@
 package ehu.isad;
 
-import ehu.isad.controller.ui.NagusiaKud;
-import ehu.isad.controller.ui.EzarpenakKud;
+import ehu.isad.controller.ui.UI1Kud;
+import ehu.isad.controller.ui.UI2Kud;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +12,13 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-  private Parent nagusiaUI;
-  private Parent ezarpenakUI;
+  private Parent UI1;
+  private Parent UI2;
 
   private Stage stage;
 
-  private NagusiaKud nagusiaKud;
-  private EzarpenakKud ezarpenakKud;
+  private UI1Kud UI1Kud;
+  private UI2Kud UI2Kud;
 
 
   @Override
@@ -28,21 +28,21 @@ public class Main extends Application {
     pantailakKargatu();
 
     stage.setTitle("Ezarpenak lortu");
-    stage.setScene(new Scene(nagusiaUI, 450, 275));
+    stage.setScene(new Scene(UI1, 450, 275));
     stage.show();
   }
 
   private void pantailakKargatu() throws IOException {
 
-    FXMLLoader loaderKautotu = new FXMLLoader(getClass().getResource("/NagusiaUI.fxml"));
-    nagusiaUI = (Parent) loaderKautotu.load();
-    nagusiaKud = loaderKautotu.getController();
-    nagusiaKud.setMainApp(this);
+    FXMLLoader loaderUI1 = new FXMLLoader(getClass().getResource("/UI1.fxml"));
+    UI1 = (Parent) loaderUI1.load();
+    UI1Kud = loaderUI1.getController();
+    UI1Kud.setMainApp(this);
 
-    FXMLLoader loaderMain = new FXMLLoader(getClass().getResource("/EzarpenakUI.fxml"));
-    ezarpenakUI = (Parent) loaderMain.load();
-    ezarpenakKud = loaderMain.getController();
-    ezarpenakKud.setMainApp(this);
+    FXMLLoader loaderUI2 = new FXMLLoader(getClass().getResource("/UI2.fxml"));
+    UI2 = (Parent) loaderUI2.load();
+    UI2Kud = loaderUI2.getController();
+    UI2Kud.setMainApp(this);
   }
 
 
@@ -50,9 +50,9 @@ public class Main extends Application {
     launch(args);
   }
 
-  public void ezarpenakErakutsi() {
-    stage.setScene(new Scene(ezarpenakUI));
+  public void herrialdeakErakutsi() {
+    stage.setScene(new Scene(UI2));
     stage.show();
-    ezarpenakKud.getEzarpenak();
+    UI2Kud.partaideakErakutsi();
   }
 }

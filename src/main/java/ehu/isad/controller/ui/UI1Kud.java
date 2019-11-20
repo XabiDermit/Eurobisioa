@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NagusiaKud implements Initializable {
+public class UI1Kud implements Initializable {
 
   // Reference to the main application.
   private Main mainApp;
@@ -22,7 +22,7 @@ public class NagusiaKud implements Initializable {
   public void onClick(ActionEvent actionEvent) {
 
 
-      mainApp.ezarpenakErakutsi();
+      mainApp.herrialdeakErakutsi();
 
   }
 
